@@ -1,17 +1,18 @@
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
+
 import Home from './screens/Home';
-import Door from './screens/Door';
+import Login from './screens/Login';
 import Register from './screens/Register';
-import Main from './screens/Main';
+import Menu from './screens/Menu';
 
 const AppNavigator = createStackNavigator({
     Home: { screen: Home },
-    Door: { screen: Door },
+    Login: { screen: Login },
     Register: { screen: Register },
-    Main: { screen: Main },
+    Menu: { screen: Menu },
 },
-    {
+    { //No show navbar and title
         headerMode: 'none',
     }
 );

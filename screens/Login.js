@@ -1,21 +1,20 @@
 import React from 'react';
-import { 
-  StatusBar, 
-  StyleSheet, 
-  View, 
-  Button, 
-  Image , 
-  TouchableOpacity, 
-  Text, 
-  TextInput 
-  } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Button,
+  Image,
+  TouchableOpacity,
+  Text,
+  TextInput
+} from 'react-native';
 
 
-export default class Friends extends React.Component {
+export default class Login extends React.Component {
 
   constructor(props) {
     super(props);
-    
+
     this.state = {
       username: '',
       password: '',
@@ -30,38 +29,37 @@ export default class Friends extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        {/* <StatusBar barStyle="dark-content" backgroundColor="#ff7f50" /> */}
         <View style={styles.barNav}>
           <Text style={styles.titulo}>INICIO DE SESION</Text>
         </View>
-        <View  style={styles.logo}>
-           <Image source={require("../assets/Images/logo.png")} />
+        <View style={styles.logo}>
+          <Image source={require("../assets/images/logo.png")} />
         </View>
         <View >
-        <Text style={styles.entradas}>Sucursal: </Text>
-        <TextInput
-          value={this.state.username}
-          onChangeText={(username) => this.setState({ username })}
-          placeholder={'Username'}
-          style={styles.input}
-        />
-        <Text style={styles.entradas} >Contraseña: </Text>
-        <TextInput
-          value={this.state.password}
-          onChangeText={(password) => this.setState({ password })}
-          placeholder={'Password'}
-          secureTextEntry={true}
-          style={styles.input}
-        />
-          </View> 
+          <Text style={styles.entradas}>Sucursal: </Text>
+          <TextInput
+            value={this.state.username}
+            onChangeText={(username) => this.setState({ username })}
+            placeholder={'Username'}
+            style={styles.input}
+          />
+          <Text style={styles.entradas}>Contraseña: </Text>
+          <TextInput
+            value={this.state.password}
+            onChangeText={(password) => this.setState({ password })}
+            placeholder={'Password'}
+            secureTextEntry={true}
+            style={styles.input}
+          />
+        </View>
         <View >
-          <TouchableOpacity onPress={() =>  this.props.navigation.navigate('Main') }>
-            <Text style={styles.button}>INICIAR SESION</Text>
-          </TouchableOpacity>  
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('Menu')}>
+            <Text style={styles.button}>Iniciar sesión</Text>
+          </TouchableOpacity>
 
-          <TouchableOpacity onPress={() =>  this.props.navigation.navigate('Register') }>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('Register')}>
             <Text style={styles.enlace}>Registrar una cuenta nueva</Text>
-          </TouchableOpacity>   
+          </TouchableOpacity>
         </View>
       </View>
     );
@@ -77,14 +75,14 @@ const styles = StyleSheet.create({
   barNav: {
     backgroundColor: "#ff7f50",
     padding: 15,
-    textAlign:'center',
+    textAlign: 'center',
     overflow: 'hidden',
-    width:'100%',
-   alignItems: 'center'
+    width: '100%',
+    alignItems: 'center'
 
   },
   titulo: {
-    fontSize:30,
+    fontSize: 30,
     fontWeight: 'bold',
     alignItems: 'center',
     marginTop: 10,
@@ -108,7 +106,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 25
   },
-  button:{
+  button: {
     backgroundColor: '#ff7f50',
     borderColor: 'white',
     borderWidth: 5,
@@ -118,7 +116,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     overflow: 'hidden',
     padding: 10,
-    textAlign:'center',
+    textAlign: 'center',
     marginTop: 10,
   },
   enlace: {

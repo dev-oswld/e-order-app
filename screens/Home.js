@@ -1,32 +1,30 @@
-import React, {Component} from 'react';
-import 
-{
-    Alert, 
-    StyleSheet, 
-    View, 
+import React, { Component } from 'react';
+import {
+    StyleSheet,
+    View,
     Button,
     Text,
     Image,
-    TouchableOpacity,
-    ImageBackground
+    TouchableOpacity
 } from 'react-native';
 
 
 export default class Home extends React.Component {
 
-      
     render() {
+        console.log("+++ Inicio +++");
         return (
             <View style={styles.container}>
-                <View  style={styles.logo}>
-                    <Image source={require("../assets/Images/logo.png")}/>
+                <View style={styles.logo}>
+                    <Image source={require("../assets/images/logo.png")} />
                 </View>
                 <View >
-                    <TouchableOpacity onPress={() =>  this.props.navigation.navigate('Door') }>
-                    <Text style={styles.button}>EMPEZAR</Text>
-                    </TouchableOpacity>  
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}>
+                        <Text style={styles.button}>Iniciar</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
+
         );
     }
 }
@@ -38,13 +36,13 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     logo: {
+        //resizeMode: 'contain',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 150,
-        marginLeft: 20
+        marginTop: 100,
+        marginLeft: 20,
     },
-    button:{
-
+    button: {
         backgroundColor: '#ff7f50',
         borderColor: 'white',
         borderWidth: 5,
@@ -54,7 +52,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         overflow: 'hidden',
         padding: 10,
-        textAlign:'center',
+        textAlign: 'center',
         marginTop: 70,
         width: 200
     }
