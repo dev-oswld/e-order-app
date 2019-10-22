@@ -40,14 +40,14 @@ export default class Login extends React.Component {
           <TextInput
             value={this.state.username}
             onChangeText={(username) => this.setState({ username })}
-            placeholder={'Username'}
+            placeholder={'Ingrese el nombre de la sucursal'}
             style={styles.input}
           />
           <Text style={styles.entradas}>Contraseña: </Text>
           <TextInput
             value={this.state.password}
             onChangeText={(password) => this.setState({ password })}
-            placeholder={'Password'}
+            placeholder={'Mínimo ocho carácteres'}
             secureTextEntry={true}
             style={styles.input}
           />

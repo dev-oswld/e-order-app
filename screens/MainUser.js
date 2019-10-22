@@ -10,22 +10,21 @@ import {
 } from 'react-native';
 
 
-export default class Menu extends React.Component {
+export default class MainUser extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-
                 <View style={styles.barNav}>
-                    <Text style={styles.titulo}>CONFIGURACIÓN MENÚ PRINCIPAL</Text>
+                    <Text style={styles.titulo}>MENÚ PRINCIPAL</Text>
                 </View>
-
+                
                 <View style={styles.seccion}>
                     <View style={styles.rows}>
                         <View style={styles.cols}>
                             <Image style={styles.img} source={require("../assets/images/menu.png")} />
                             <View >
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate('UpdateMenu')}>
-                                    <Text style={styles.button}>Menú</Text>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('MainMenu')}>
+                                    <Text style={styles.button}>MENU</Text>
                                 </TouchableOpacity>
                             </View>
                         </View>
@@ -33,22 +32,23 @@ export default class Menu extends React.Component {
                         <View style={styles.cols}>
                             <Image style={styles.img} source={require("../assets/images/espacios.png")} />
                             <TouchableOpacity onPress={() => this.props.navigation.navigate('')}>
-                                <Text style={styles.button}>Espacios</Text>
+                                <Text style={styles.button}>ESPACIOS</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
 
                     <View style={styles.rows2}>
                         <View style={styles.cols} >
-                            <Image style={styles.img} source={require("../assets/images/reportes.png")} />
+                            <Image style={styles.img} source={require("../assets/images/retroalimentacion.png")} />
                             <TouchableOpacity onPress={() => this.props.navigation.navigate('')}>
-                                <Text style={styles.button}>Reportes</Text>
+                                <Text style={styles.button}>RETROALIMENTACION</Text>
                             </TouchableOpacity>
                         </View>
+
                         <View style={styles.cols} >
                             <Image style={styles.img} source={require("../assets/images/sucursal.png")} />
                             <TouchableOpacity onPress={() => this.props.navigation.navigate('')}>
-                                <Text style={styles.button}>Sucursal</Text>
+                                <Text style={styles.button}>SUCURSAL</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -90,7 +90,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: 40
-
     },
     rows: {
         flex: 0.7,
@@ -119,10 +118,10 @@ const styles = StyleSheet.create({
         borderWidth: 5,
         borderRadius: 5,
         color: 'white',
-        fontSize: 25,
+        fontSize: 20,
         fontWeight: 'bold',
         overflow: 'hidden',
-        padding: 10,
+        padding: 5,
         textAlign: 'center',
         marginTop: 15,
         width: 200

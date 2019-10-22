@@ -24,7 +24,6 @@ export default class Home extends React.Component {
                     </TouchableOpacity>
                 </View>
             </View>
-
         );
     }
 }
@@ -40,7 +39,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 100,
-        marginLeft: 20,
+        marginLeft: 20
     },
     button: {
         backgroundColor: '#ff7f50',

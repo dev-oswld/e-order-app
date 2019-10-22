@@ -42,14 +42,14 @@ export default class Register extends React.Component {
           <TextInput
             value={this.state.username}
             onChangeText={(username) => this.setState({ username })}
-            placeholder={'Username'}
+            placeholder={'Ingrese el nombre completo'}
             style={styles.input}
           />
           <Text style={styles.entradas}>Crea una contraseña: </Text>
           <TextInput
             value={this.state.password}
             onChangeText={(password) => this.setState({ password })}
-            placeholder={'Password'}
+            placeholder={'Mínimo ocho carácteres'}
             secureTextEntry={true}
             style={styles.input}
           />

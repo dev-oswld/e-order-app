@@ -14,52 +14,53 @@ export default class Menu extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-
                 <View style={styles.barNav}>
-                    <Text style={styles.titulo}>CONFIGURACIÓN MENÚ PRINCIPAL</Text>
+                    <Text style={styles.titulo}>PLATILLOS</Text>
                 </View>
 
                 <View style={styles.seccion}>
                     <View style={styles.rows}>
                         <View style={styles.cols}>
-                            <Image style={styles.img} source={require("../assets/images/menu.png")} />
+                            <Image style={styles.img} source={require("../assets/images/primerplato.png")} />
                             <View >
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate('UpdateMenu')}>
-                                    <Text style={styles.button}>Menú</Text>
+                                <TouchableOpacity onPress={() => this.props.navigation.navigate('')}>
+                                    <Text style={styles.button}>PLATILLO ENTRADA</Text>
                                 </TouchableOpacity>
                             </View>
                         </View>
 
                         <View style={styles.cols}>
-                            <Image style={styles.img} source={require("../assets/images/espacios.png")} />
+                            <Image style={styles.img} source={require("../assets/images/platofuerte.png")} />
                             <TouchableOpacity onPress={() => this.props.navigation.navigate('')}>
-                                <Text style={styles.button}>Espacios</Text>
+                                <Text style={styles.button}>PLATILLO PRINCIPAL</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
 
                     <View style={styles.rows2}>
                         <View style={styles.cols} >
-                            <Image style={styles.img} source={require("../assets/images/reportes.png")} />
+                            <Image style={styles.img} source={require("../assets/images/postre.png")} />
                             <TouchableOpacity onPress={() => this.props.navigation.navigate('')}>
-                                <Text style={styles.button}>Reportes</Text>
+                                <Text style={styles.button}>POSTRES</Text>
                             </TouchableOpacity>
                         </View>
+
                         <View style={styles.cols} >
-                            <Image style={styles.img} source={require("../assets/images/sucursal.png")} />
+                            <Image style={styles.img} source={require("../assets/images/bebidas.png")} />
                             <TouchableOpacity onPress={() => this.props.navigation.navigate('')}>
-                                <Text style={styles.button}>Sucursal</Text>
+                                <Text style={styles.button}>BEBIDAS</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
                 </View>
 
                 <View style={styles.btnSalir} >
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Roles')}>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('MainUser')}>
                         <Text style={styles.button}>SALIR</Text>
                     </TouchableOpacity>
                 </View>
             </View>
+
         );
     }
 }
@@ -79,7 +80,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     titulo: {
-        fontSize: 30,
+        fontSize: 25,
         fontWeight: 'bold',
         alignItems: 'center',
         marginTop: 10,
@@ -90,7 +91,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginTop: 40
-
     },
     rows: {
         flex: 0.7,
@@ -119,10 +119,10 @@ const styles = StyleSheet.create({
         borderWidth: 5,
         borderRadius: 5,
         color: 'white',
-        fontSize: 25,
+        fontSize: 20,
         fontWeight: 'bold',
         overflow: 'hidden',
-        padding: 10,
+        padding: 5,
         textAlign: 'center',
         marginTop: 15,
         width: 200
