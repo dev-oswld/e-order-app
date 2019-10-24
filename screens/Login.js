@@ -38,14 +38,13 @@ export default class Login extends React.Component {
     const scrollEnabled = this.state.screenHeight > height;
     return (
       <SafeAreaView style={styles.container}>
+        <StatusBar barStyle="dark-content" backgroundColor="#f2cc8f" />
         <ScrollView
           style={{ flex: 1 }}
           contentContainerStyle={styles.scrollview}
           scrollEnabled={scrollEnabled}
           onContentSizeChange={this.onContentSizeChange}>
-          <View style={styles.barNav}>
-            <Text style={styles.titulo}>INICIO DE SESIÓN</Text>
-          </View>
+         
           <View /*style={styles.logo}*/>
             <Image source={require("../assets/images/logo.png")} resizeMode='stretch'/>
           </View>
@@ -91,7 +90,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
   },
   barNav: {
-    backgroundColor: "#ff7f50",
+    backgroundColor: "#F4B666",
     padding: 15,
     textAlign: 'center',
     overflow: 'hidden',
