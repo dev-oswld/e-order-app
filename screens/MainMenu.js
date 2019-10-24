@@ -6,61 +6,76 @@ import {
     Image,
     StyleSheet,
     FlatList,
-    TouchableOpacity
+    TouchableOpacity,
+    Dimensions
 } from 'react-native';
-
+import { SafeAreaView } from 'react-navigation';
+import { ScrollView } from 'react-native-gesture-handler';
+const { height } = Dimensions.get('window');
 
 export default class Menu extends React.Component {
-    render() {
-        return (
-            <View style={styles.container}>
-                <View style={styles.barNav}>
-                    <Text style={styles.titulo}>PLATILLOS</Text>
-                </View>
 
-                <View style={styles.seccion}>
-                    <View style={styles.rows}>
-                        <View style={styles.cols}>
-                            <Image style={styles.img} source={require("../assets/images/primerplato.png")} />
-                            <View >
-                                <TouchableOpacity onPress={() => this.props.navigation.navigate('')}>
-                                    <Text style={styles.button}>PLATILLO ENTRADA</Text>
-                                </TouchableOpacity>
+    state = {
+        screenHeight: 0
+    }
+
+    onContentSizeChange = (contentWidth, contentHeight) => {
+        this.setState({ screenHeight: contentHeight });
+    }
+
+    render() {
+        const scrollEnabled = this.state.screenHeight > height;
+        return (
+            <SafeAreaView>
+                <ScrollView
+                    style={{ flex: 1 }}
+                    scrollEnabled={scrollEnabled}
+                    onContentSizeChange={this.onContentSizeChange}>
+                    <View style={styles.container}>
+                        <View style={styles.barNav}>
+                            <Text style={styles.titulo}>PLATILLOS</Text>
+                        </View>
+                        <View style={styles.seccion}>
+                            <View style={styles.rows}>
+                                <View style={styles.cols}>
+                                    <Image style={styles.img} source={require("../assets/images/primerplato.png")} />
+                                    <View >
+                                        <TouchableOpacity onPress={() => this.props.navigation.navigate('')}>
+                                            <Text style={styles.button}>PLATILLO ENTRADA</Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                </View>
+
+                                <View style={styles.cols}>
+                                    <Image style={styles.img} source={require("../assets/images/platofuerte.png")} />
+                                    <TouchableOpacity onPress={() => this.props.navigation.navigate('')}>
+                                        <Text style={styles.button}>PLATILLO PRINCIPAL</Text>
+                                    </TouchableOpacity>
+                                </View>
+                            </View>
+                            <View style={styles.rows2}>
+                                <View style={styles.cols} >
+                                    <Image style={styles.img} source={require("../assets/images/postre.png")} />
+                                    <TouchableOpacity onPress={() => this.props.navigation.navigate('')}>
+                                        <Text style={styles.button}>POSTRES</Text>
+                                    </TouchableOpacity>
+                                </View>
+                                <View style={styles.cols} >
+                                    <Image style={styles.img} source={require("../assets/images/bebidas.png")} />
+                                    <TouchableOpacity onPress={() => this.props.navigation.navigate('')}>
+                                        <Text style={styles.button}>BEBIDAS</Text>
+                                    </TouchableOpacity>
+                                </View>
                             </View>
                         </View>
-
-                        <View style={styles.cols}>
-                            <Image style={styles.img} source={require("../assets/images/platofuerte.png")} />
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('')}>
-                                <Text style={styles.button}>PLATILLO PRINCIPAL</Text>
+                        <View style={styles.btnSalir} >
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('MainUser')}>
+                                <Text style={styles.button}>SALIR</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
-
-                    <View style={styles.rows2}>
-                        <View style={styles.cols} >
-                            <Image style={styles.img} source={require("../assets/images/postre.png")} />
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('')}>
-                                <Text style={styles.button}>POSTRES</Text>
-                            </TouchableOpacity>
-                        </View>
-
-                        <View style={styles.cols} >
-                            <Image style={styles.img} source={require("../assets/images/bebidas.png")} />
-                            <TouchableOpacity onPress={() => this.props.navigation.navigate('')}>
-                                <Text style={styles.button}>BEBIDAS</Text>
-                            </TouchableOpacity>
-                        </View>
-                    </View>
-                </View>
-
-                <View style={styles.btnSalir} >
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('MainUser')}>
-                        <Text style={styles.button}>SALIR</Text>
-                    </TouchableOpacity>
-                </View>
-            </View>
-
+                </ScrollView>
+            </SafeAreaView>
         );
     }
 }
