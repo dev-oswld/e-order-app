@@ -3,6 +3,8 @@ import { StyleSheet, ToastAndroid } from 'react-native';
 import { Container, Header, Title, Body, Left, Right, Content, Thumbnail, Item, Input, Button, Icon, Text, Form, Label } from 'native-base';
 
 export default class Login extends Component {
+  /*---
+   BUGS => states and props
   constructor(props) {
     super(props);
     this.state = {
@@ -10,14 +12,16 @@ export default class Login extends Component {
     };
   }
 
-  moveTo = () => {
-    //alert('QR section');
+  moveTo() {
+    alert('QR section');
     this.props.navigation.navigate('PreMenu');
   }
 
-  showToast = () => {
-    ToastAndroid.show("Bienvenido", ToastAndroid.SHORT);
+  showWelcome() {
+    ToastAndroid.show(" Bienvenido ", ToastAndroid.SHORT);
+    this.props.navigation.navigate('Administrator');
   }
+  ---*/
 
   render() {
     console.log("* Login : Account *");
@@ -33,7 +37,7 @@ export default class Login extends Component {
             <Title>Inicio de sesión</Title>
           </Body>
           <Right style={{ flex: 1 }}>
-            <Button transparent onPress={() => this.moveTo()}>
+            <Button transparent onPress={() => this.props.navigation.navigate('PreMenu')}>
               <Icon type="SimpleLineIcons" name='camera' />
               <Text>QR</Text>
             </Button>
@@ -49,7 +53,7 @@ export default class Login extends Component {
               <Input style={styles.input} secureTextEntry={true} placeholder='Ingrese la contraseña' placeholderTextColor="white" />
             </Item>
           </Form>
-          <Button block rounded large style={styles.button} onPress={this.showToast}>
+          <Button block rounded large style={styles.button} onPress={() => this.props.navigation.navigate('Administrator')}>
             <Text>Iniciar sesión</Text>
           </Button>
           <Label style={styles.label} onPress={() => this.props.navigation.navigate('Register')}>Registro nuevo</Label>

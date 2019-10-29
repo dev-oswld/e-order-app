@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { StatusBar, StyleSheet } from 'react-native';
 import { Container, Content, Thumbnail, Button, Text } from 'native-base';
 
-export default class Login extends Component {
+export default class Home extends Component {
 
   render() {
     console.log("+ Home : Welcome +");
