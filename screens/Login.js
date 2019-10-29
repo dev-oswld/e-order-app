@@ -1,10 +1,21 @@
 import React, { Component } from 'react';
-import { StyleSheet } from 'react-native';
-import { Container, Header, Title, Body, Left, Right, Content, Thumbnail, Item, Input, Button, Icon, Text, Form, Toast } from 'native-base';
+import { StyleSheet,ToastAndroid } from 'react-native';
+import { Container, Header, Title, Body, Left, Right, Content, Thumbnail, Item, Input, Button, Icon, Text, Form, Label } from 'native-base';
 
 export default class Login extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      visible: false
+    };
+  }
+
+  showToast = () => {
+    ToastAndroid.show( "Bienvenido", ToastAndroid.SHORT);
+  }
+
   render() {
-    console.log("+ Login : Account +");
+    console.log("* Login : Account *");
     return (
       <Container style={styles.container}>
         <Header style={{ backgroundColor: '#f0c178' }} androidStatusBarColor='#f0c178'>
@@ -33,9 +44,10 @@ export default class Login extends Component {
               <Input style={styles.input} secureTextEntry={true} placeholder='Ingrese la contraseña' placeholderTextColor="white" />
             </Item>
           </Form>
-          <Button block rounded large style={styles.button} /*Make a Toast text style HERE*/>
+          <Button block rounded large style={styles.button} onPress={this.showToast}>
             <Text>Iniciar sesión</Text>
           </Button>
+          <Label style={{marginTop:10, justifyContent: 'center'}} onPress={() => this.props.navigation.navigate('Register')}>Registrar una nueva cuenta</Label>
         </Content>
       </Container >
     );
@@ -46,9 +58,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: '#f2cc8f',
+    backgroundColor: '#f2cc8f'
   },
   content: {
+    flex: 2,
     alignSelf: 'center'
   },
   userImage: {
