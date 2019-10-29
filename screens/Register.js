@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet,ToastAndroid } from 'react-native';
 import { Container, Header, Title, Button, Icon, Left, Right, Body, Content, Form, Item, Input, Text, Toast } from 'native-base';
 
 export default class Register extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      visible: false
+    };
+  }
+
+  showToast = () => {
+    ToastAndroid.show("Registro exitoso", ToastAndroid.SHORT);
+  }
+
   render() {
     console.log("* Register : NEW *");
     return (
@@ -36,7 +47,7 @@ export default class Register extends Component {
               <Input style={styles.input} secureTextEntry={true} placeholder='Ingrese la contraseña' placeholderTextColor="white" />
             </Item>
           </Form>
-          <Button block rounded large style={styles.button}>
+          <Button block rounded large style={styles.button} onPress={this.showToast}>
             <Text>Registrar</Text>
           </Button>
         </Content>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet,ToastAndroid } from 'react-native';
+import { StyleSheet, ToastAndroid } from 'react-native';
 import { Container, Header, Title, Body, Left, Right, Content, Thumbnail, Item, Input, Button, Icon, Text, Form, Label } from 'native-base';
 
 export default class Login extends Component {
@@ -10,8 +10,13 @@ export default class Login extends Component {
     };
   }
 
+  moveTo = () => {
+    //alert('QR section');
+    this.props.navigation.navigate('PreMenu');
+  }
+
   showToast = () => {
-    ToastAndroid.show( "Bienvenido", ToastAndroid.SHORT);
+    ToastAndroid.show("Bienvenido", ToastAndroid.SHORT);
   }
 
   render() {
@@ -28,7 +33,7 @@ export default class Login extends Component {
             <Title>Inicio de sesión</Title>
           </Body>
           <Right style={{ flex: 1 }}>
-            <Button transparent onPress={() => alert('QR section')}>
+            <Button transparent onPress={() => this.moveTo()}>
               <Icon type="SimpleLineIcons" name='camera' />
               <Text>QR</Text>
             </Button>
@@ -47,7 +52,7 @@ export default class Login extends Component {
           <Button block rounded large style={styles.button} onPress={this.showToast}>
             <Text>Iniciar sesión</Text>
           </Button>
-          <Label style={{marginTop:10, justifyContent: 'center'}} onPress={() => this.props.navigation.navigate('Register')}>Registrar una nueva cuenta</Label>
+          <Label style={styles.label} onPress={() => this.props.navigation.navigate('Register')}>Registro nuevo</Label>
         </Content>
       </Container >
     );
@@ -62,6 +67,7 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 2,
+    flexDirection: 'column',
     alignSelf: 'center'
   },
   userImage: {
@@ -70,7 +76,9 @@ const styles = StyleSheet.create({
     tintColor: 'white',
     width: 150,
     height: 150,
-    marginTop: 15
+    marginTop: 15,
+    marginLeft: 115,
+    marginRight: 115
   },
   item: {
     marginTop: 10,
@@ -78,6 +86,15 @@ const styles = StyleSheet.create({
   },
   input: {
     color: 'white'
+  },
+  label: {
+    textDecorationLine: 'underline',
+    textAlign: 'center',
+    fontSize: 25,
+    color: 'white',
+    marginTop: 10,
+    marginLeft: 100,
+    marginRight: 100
   },
   button: {
     backgroundColor: '#3d405b',
