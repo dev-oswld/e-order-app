@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
-import { Container, Header, Title, Body, Left, Right, Content, Button, Icon, Label } from 'native-base';
+import { Container, Header, Title, Body, Left, Right, Content, Button, Icon, Text, Card, CardItem, Thumbnail } from 'native-base';
 
 export default class Waiter extends Component {
 
@@ -23,8 +23,47 @@ export default class Waiter extends Component {
                         </Button>
                     </Right>
                 </Header>
-                <Content>
-                    <Label>Waiter//Mesero</Label>
+                <Content /* Footer with badge or Onscroll Tabs? */>
+                    <Card /* Example */>
+                        <CardItem header bordered>
+                        <Thumbnail small source={require("../assets/images/mesero.png")} />
+                            <Text>   Ordenes del día</Text>
+                        </CardItem>
+                        <CardItem bordered>
+                            <Body>
+                                <Text>
+                                    Número de ordenes: A {"\n"}
+                                    Ordenes pedidas: B {"\n"}
+                                    Ordenes en proceso: C {"\n"}
+                                    Ordenes completadas: D
+                                </Text>
+                            </Body>
+                        </CardItem>
+                        <CardItem bordered>
+                            <Text>Avisos recibidos: 0{"\n"}
+                                  Espacios disponibles: E
+                            </Text>
+                        </CardItem>
+                        <CardItem footer bordered button onPress={() => alert("Proximamente")}>
+                            <Text>Mostras más</Text>
+                        </CardItem>
+                    </Card>
+                    <Card>
+                        <CardItem bordered button onPress={() => alert("Más contenido pronto")}>
+                            <Body>
+                                <Text /*Deck Swiper?*/>
+                                    Información de utilidad
+                                </Text>
+                            </Body>
+                        </CardItem>
+                        <CardItem bordered>
+                            <Body>
+                                <Text /*Deck Swiper?*/>
+                                    Más contenido...
+                                </Text>
+                            </Body>
+                        </CardItem>
+                    </Card>
                 </Content>
             </Container>
         );

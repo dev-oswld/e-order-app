@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet } from 'react-native';
-import { Container, Header, Title, Body, Left, Right, Content, Button, Icon, Label } from 'native-base';
+import { Container, Header, Title, Body, Left, Right, Content, Button, Icon, Text, Card, CardItem, Thumbnail } from 'native-base';
 
 export default class Chef extends Component {
 
@@ -24,7 +24,45 @@ export default class Chef extends Component {
                     </Right>
                 </Header>
                 <Content>
-                    <Label>Chef//Cocinero</Label>
+                    <Card /* Example */>
+                        <CardItem header bordered>
+                            <Thumbnail small source={require("../assets/images/chef.jpg")} />
+                            <Text>   Menú del día</Text>
+                        </CardItem>
+                        <CardItem bordered>
+                            <Body>
+                                <Text>
+                                    Platillos más pedido: A{"\n"}
+                                    Bedidas más pedidas: B
+                                </Text>
+                            </Body>
+                        </CardItem>
+                        <CardItem bordered>
+                            <Text>Ordenes completadas: 0{"\n"}
+                                  Ordenes en proceso: 0
+                            </Text>
+                        </CardItem>
+                        <CardItem footer bordered button onPress={() => alert("Proximamente")}>
+                            <Text>Avisos del día</Text>
+                        </CardItem>
+                    </Card>
+                    <Card>
+                        <CardItem bordered button onPress={() => alert("Más contenido pronto")}>
+                            <Body>
+                                <Text>
+                                    Bitacora de cocina
+                                </Text>
+                            </Body>
+                        </CardItem>
+                        <CardItem bordered>
+                            <Body>
+                                <Text>
+                                    Más contenido...{"\n"}
+                                    Más contenido...
+                                </Text>
+                            </Body>
+                        </CardItem>
+                    </Card>
                 </Content>
             </Container>
         );
