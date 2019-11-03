@@ -37,7 +37,7 @@ export default class Login extends Component {
             <Title>Inicio de sesión</Title>
           </Body>
           <Right style={{ flex: 1 }}>
-            <Button transparent onPress={() => this.props.navigation.navigate('PreMenu')}>
+            <Button transparent onPress={() => this.props.navigation.navigate('Roles')}>
               <Icon type="SimpleLineIcons" name='camera' />
               <Text>QR</Text>
             </Button>

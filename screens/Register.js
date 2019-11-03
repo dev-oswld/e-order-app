@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { StyleSheet,ToastAndroid } from 'react-native';
-import { Container, Header, Title, Button, Icon, Left, Right, Body, Content, Form, Item, Input, Text, Toast } from 'native-base';
+import { StyleSheet, ToastAndroid } from 'react-native';
+import { Container, Header, Title, Button, Icon, Left, Right, Body, Content, Form, Item, Input, Text, Thumbnail } from 'native-base';
 
 export default class Register extends Component {
   constructor(props) {
@@ -30,6 +30,7 @@ export default class Register extends Component {
           <Right />
         </Header>
         <Content>
+          <Thumbnail style={styles.image} source={require("../assets/images/map.png")} />
           <Form>
             <Item style={styles.item} rounded stackedLabel last>
               <Input style={styles.input} placeholder='Ingrese el nombre de la sucursal' placeholderTextColor="white" />
@@ -61,6 +62,16 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     backgroundColor: '#f2cc8f'
+  },
+  image: {
+    resizeMode: 'contain',
+    justifyContent: 'center',
+    tintColor: '#3d405b',
+    width: 150,
+    height: 150,
+    marginTop: 15,
+    marginLeft: 115,
+    marginRight: 115
   },
   item: {
     marginTop: 10,
