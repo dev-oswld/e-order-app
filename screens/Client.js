@@ -1,29 +1,29 @@
 import React, { Component } from 'react';
-import { StyleSheet, Alert, BackHandler } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { Container, Header, Title, Body, Left, Right, Content, Button, Icon, Text, Card, CardItem, List, ListItem, Separator, Thumbnail } from 'native-base';
 
 export default class Client extends Component {
-    constructor(props) {
-        super(props);
-        this.back_Button_Press = this.back_Button_Press.bind(this);
-    }
-
-    componentDidMount() {
-        BackHandler.addEventListener('hardwareBackPress', this.back_Button_Press);
-    }
-
-    back_Button_Press = () => {
-        Alert.alert(
-            'Aviso importante',
-            '¿Deseas cerrar la sesión?',
-            [
-                { text: 'Si', onPress: () => this.props.navigation.navigate('Login') },
-                { text: 'No', onPress: () => console.log('Live') }
-            ],
-            { cancelable: false },
-        );
-        return true;
-    }
+    /* constructor(props) {
+         super(props);
+         this.back_Button_Press = this.back_Button_Press.bind(this);
+     }
+ 
+     componentDidMount() {
+         BackHandler.addEventListener('hardwareBackPress', this.back_Button_Press);
+     }
+ 
+     back_Button_Press = () => {
+         Alert.alert(
+             'Aviso importante',
+             '¿Deseas cerrar la sesión?',
+             [
+                 { text: 'Si', onPress: () => this.props.navigation.navigate('Login') },
+                 { text: 'No', onPress: () => console.log('Live') }
+             ],
+             { cancelable: false },
+         );
+         return true;
+     }*/
 
     render() {
         console.log("+ Client +");

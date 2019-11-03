@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, ToastAndroid } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { Container, Header, Title, Body, Left, Right, Content, Thumbnail, Item, Input, Button, Icon, Text, Form, Label } from 'native-base';
 
 export default class Login extends Component {
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
   userImage: {
     resizeMode: 'contain',
     justifyContent: 'center',
-    tintColor: 'white',
+    tintColor: '#3d405b',
     width: 150,
     height: 150,
     marginTop: 15,
