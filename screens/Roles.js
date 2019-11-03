@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { StatusBar, StyleSheet } from 'react-native';
 import { Container, Content, Thumbnail, Button, Text } from 'native-base';
 
-export default class PreMenu extends Component {
+export default class Roles extends Component {
 
     render() {
-        console.log("+ PreMenu : Roles +");
+        console.log("+ Roles : 4 types +");
         return (
             <Container style={styles.container}>
                 <StatusBar backgroundColor="#f2cc8f" barStyle="light-content" />
