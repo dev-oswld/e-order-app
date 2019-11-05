@@ -27,49 +27,24 @@ export default class Waiter extends Component {
                     </Body>
                     <Right style={{ flex: 1 }}>
                         <Button transparent onPress={this.showAlert} /*States and child component*/>
-                            <Icon type="SimpleLineIcons" name='reload'/*<Spinner color='#3d405b' />*//>
+                            <Icon type="SimpleLineIcons" name='reload'/*<Spinner color='#3d405b' />*/ />
                         </Button>
                     </Right>
                 </Header>
-                <Content /* Footer with badge or Onscroll Tabs? */>
+                <Content>
                     <Card /* Example */>
                         <CardItem header bordered>
                             <Thumbnail small source={require("../assets/images/mesero.png")} />
                             <Text>   Ordenes del día</Text>
                         </CardItem>
                         <CardItem bordered>
-                            <Body>
-                                <Text>
-                                    Número de ordenes: A {"\n"}
-                                    Ordenes pedidas: B {"\n"}
-                                    Ordenes en proceso: C {"\n"}
-                                    Ordenes completadas: D
-                                </Text>
-                            </Body>
+                            <Text> Mesa 1. {"\n"}Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Text>
                         </CardItem>
                         <CardItem bordered>
-                            <Text>Avisos recibidos: 0{"\n"}
-                                Espacios disponibles: E
-                            </Text>
-                        </CardItem>
-                        <CardItem footer bordered button onPress={() => alert("Proximamente")}>
-                            <Text>Mostras más</Text>
-                        </CardItem>
-                    </Card>
-                    <Card>
-                        <CardItem bordered button onPress={() => alert("Más contenido pronto")}>
-                            <Body>
-                                <Text /*Deck Swiper?*/>
-                                    Información de utilidad
-                                </Text>
-                            </Body>
+                            <Text> Mesa 2. {"\n"}Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Text>
                         </CardItem>
                         <CardItem bordered>
-                            <Body>
-                                <Text /*Deck Swiper?*/>
-                                    Más contenido...
-                                </Text>
-                            </Body>
+                            <Text> Mesa 3. {"\n"}Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Text>
                         </CardItem>
                     </Card>
                 </Content>

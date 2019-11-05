@@ -15,7 +15,7 @@ export default class Administrator extends Component {
                         </Button>
                     </Left>
                     <Body style={{ flex: 1, alignItems: 'center' }}>
-                        <Title>Vista Administrador</Title>
+                        <Title>Administración</Title>
                     </Body>
                     <Right />
                 </Header>

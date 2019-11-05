@@ -1,6 +1,22 @@
 import React, { Component } from 'react';
-import { StyleSheet } from 'react-native';
-import { Container, Header, Title, Body, Left, Right, Content, Button, Icon, Text, Card, CardItem, Thumbnail } from 'native-base';
+import { StyleSheet, Image } from 'react-native';
+import { Container, Header, Title, Body, Left, Right, Content, View, DeckSwiper, Button, Icon, Text, Card, CardItem, Thumbnail } from 'native-base';
+
+const orders = [
+    {
+        place: 'Mesa 1',
+        name: 'Platillo X',
+        status: 'En proceso',
+        image: require('../assets/images/platofuerte.png'),
+    },
+    {
+        place: 'Mesa 2',
+        name: 'Platillo Y',
+        status: 'En proceso',
+        image: require('../assets/images/postre.png'),
+    },
+];
+
 
 export default class Chef extends Component {
 
@@ -20,7 +36,7 @@ export default class Chef extends Component {
                     <Right />
                 </Header>
                 <Content>
-                    <Card /* Example */>
+                    <Card /* Optimize this */>
                         <CardItem header bordered>
                             <Thumbnail small source={require("../assets/images/chef.jpg")} />
                             <Text>   Menú del día</Text>
@@ -35,30 +51,39 @@ export default class Chef extends Component {
                         </CardItem>
                         <CardItem bordered>
                             <Text>Ordenes completadas: 0{"\n"}
-                                  Ordenes en proceso: 0
+                                Ordenes en proceso: 0
                             </Text>
                         </CardItem>
                         <CardItem footer bordered button onPress={() => alert("Proximamente")}>
                             <Text>Avisos del día</Text>
                         </CardItem>
                     </Card>
-                    <Card>
-                        <CardItem bordered button onPress={() => alert("Más contenido pronto")}>
-                            <Body>
-                                <Text>
-                                    Bitacora de cocina
-                                </Text>
-                            </Body>
-                        </CardItem>
-                        <CardItem bordered>
-                            <Body>
-                                <Text>
-                                    Más contenido...{"\n"}
-                                    Más contenido...
-                                </Text>
-                            </Body>
-                        </CardItem>
-                    </Card>
+                    <View style={{ height: 450 }}>
+                        <DeckSwiper /*Swipe Deck with callback function ?*/
+                            dataSource={orders}
+                            renderItem=
+                            { item =>
+                                <Card style={styles.card}>
+                                    <CardItem style={styles.subcard}>
+                                        <Left>
+                                            <Thumbnail square style={{ tintColor: 'white' }} source={require("../assets/images/espacios.png")} />
+                                            <Body>
+                                                <Text style={{ color: 'white' }}>{item.place}</Text>
+                                                <Text note>{item.status}</Text>
+                                            </Body>
+                                        </Left>
+                                    </CardItem>
+                                    <CardItem cardBody>
+                                        <Image style={{ flex: 1, height: 250 }} source={item.image} />
+                                    </CardItem>
+                                    <CardItem style={{ backgroundColor: '#afb2ca' }}>
+                                        <Icon type="SimpleLineIcons" name='check' style={{ color: 'green' }} />
+                                        <Text style={{ color: 'white' }}>{item.name}</Text>
+                                    </CardItem>
+                                </Card>
+                            }
+                        />
+                    </View>
                 </Content>
             </Container>
         );
@@ -69,6 +94,12 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'column',
-        backgroundColor: '#f2cc8f',
+        backgroundColor: '#f2cc8f'
+    },
+    card: {
+        elevation: 5
+    },
+    subcard: {
+        backgroundColor: '#3d405b'
     }
 });
