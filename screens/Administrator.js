@@ -17,11 +17,7 @@ export default class Administrator extends Component {
                     <Body style={{ flex: 1, alignItems: 'center' }}>
                         <Title>Vista Administrador</Title>
                     </Body>
-                    <Right style={{ flex: 1 }}>
-                        <Button transparent>
-                            <Icon type="SimpleLineIcons" name='options-vertical' />
-                        </Button>
-                    </Right>
+                    <Right />
                 </Header>
                 <Content>
                     <Card /* Example */>

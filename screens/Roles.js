@@ -10,7 +10,7 @@ export default class Roles extends Component {
             <Container style={styles.container}>
                 <StatusBar backgroundColor="#f2cc8f" barStyle="light-content" />
                 <Content>
-                    <Thumbnail style={styles.userImage} source={require("../assets/images/content.png")} />
+                    <Thumbnail style={styles.Image} source={require("../assets/images/content.png")} />
                     <Button block rounded large style={styles.button} onPress={() => this.props.navigation.navigate('Administrator')}>
                         <Text>Administración</Text>
                     </Button>
@@ -42,10 +42,10 @@ const styles = StyleSheet.create({
         height: 300,
         marginTop: 80
     },
-    userImage: {
+    Image: {
         resizeMode: 'contain',
         justifyContent: 'center',
-        tintColor: 'white',
+        tintColor: '#3d405b',
         width: 120,
         height: 120,
         marginTop: 25,

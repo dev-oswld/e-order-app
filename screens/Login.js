@@ -30,7 +30,7 @@ export default class Login extends Component {
         <Header style={{ backgroundColor: '#f0c178' }} androidStatusBarColor='#f0c178'>
           <Left style={{ flex: 1 }}>
             <Button transparent onPress={() => this.props.navigation.navigate('Home')}>
-              <Icon type="SimpleLineIcons" name='arrow-left' />
+              <Icon style={{ color: '#3d405b'}} type="SimpleLineIcons" name='arrow-left' />
             </Button>
           </Left>
           <Body style={{ flex: 1, alignItems: 'center' }}>

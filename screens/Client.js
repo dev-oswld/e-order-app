@@ -22,13 +22,13 @@ export default class Client extends Component {
                     <Right />
                 </Header>
                 <Tabs tabContainerStyle={{ elevation: 0 }} tabBarUnderlineStyle={{ backgroundColor: '#3d405b' }}>
-                    <Tab heading="Platillotes" tabStyle={{ backgroundColor: '#f0c178' }} textStyle={{ color: 'black', fontSize: 15 }} activeTabStyle={{ backgroundColor: '#ebac4a' }} activeTextStyle={{ color: 'white', fontSize: 20 }}>
+                    <Tab heading="Principal" tabStyle={{ backgroundColor: '#f0c178' }} textStyle={{ color: 'white', fontSize: 15 }} activeTabStyle={{ backgroundColor: '#f2cc8f' }} activeTextStyle={{ color: '#000080', fontSize: 20 }}>
                         <TabOne />
                     </Tab>
-                    <Tab heading="Platillos" tabStyle={{ backgroundColor: '#f0c178' }} textStyle={{ color: 'black', fontSize: 15 }} activeTabStyle={{ backgroundColor: '#ebac4a' }} activeTextStyle={{ color: 'white', fontSize: 20 }}>
+                    <Tab heading="Entrada" tabStyle={{ backgroundColor: '#f0c178' }} textStyle={{ color: 'white', fontSize: 15 }} activeTabStyle={{ backgroundColor: '#f2cc8f' }} activeTextStyle={{ color: '#000080', fontSize: 20 }}>
                         <TabTwo />
                     </Tab>
-                    <Tab heading="Bebidas" tabStyle={{ backgroundColor: '#f0c178' }} textStyle={{ color: 'black', fontSize: 15 }} activeTabStyle={{ backgroundColor: '#ebac4a' }} activeTextStyle={{ color: 'white', fontSize: 20 }}>
+                    <Tab heading="Bebidas" tabStyle={{ backgroundColor: '#f0c178' }} textStyle={{ color: 'white', fontSize: 15 }} activeTabStyle={{ backgroundColor: '#f2cc8f' }} activeTextStyle={{ color: '#000080', fontSize: 20 }}>
                         <TabThree />
                     </Tab>
                 </Tabs>

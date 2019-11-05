@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
-import { StyleSheet } from 'react-native';
-import { Container, Header, Title, Body, Left, Right, Content, Button, Icon, Text, Card, CardItem, Thumbnail } from 'native-base';
+import { StyleSheet, Alert } from 'react-native';
+import { Container, Header, Title, Body, Left, Right, Content, Button, Icon, Text, Card, CardItem, Thumbnail, Spinner } from 'native-base';
 
 export default class Waiter extends Component {
+
+    showAlert() {
+        Alert.alert(
+            'Aviso',
+            'Vista actualizada',
+            [{ text: 'Ok' }]
+        )
+    }
 
     render() {
         console.log("+ Waiter +");
@@ -18,15 +26,15 @@ export default class Waiter extends Component {
                         <Title>Vista Mesero</Title>
                     </Body>
                     <Right style={{ flex: 1 }}>
-                        <Button transparent>
-                            <Icon type="SimpleLineIcons" name='reload' />
+                        <Button transparent onPress={this.showAlert} /*States and child component*/>
+                            <Icon type="SimpleLineIcons" name='reload'/*<Spinner color='#3d405b' />*//>
                         </Button>
                     </Right>
                 </Header>
                 <Content /* Footer with badge or Onscroll Tabs? */>
                     <Card /* Example */>
                         <CardItem header bordered>
-                        <Thumbnail small source={require("../assets/images/mesero.png")} />
+                            <Thumbnail small source={require("../assets/images/mesero.png")} />
                             <Text>   Ordenes del día</Text>
                         </CardItem>
                         <CardItem bordered>
@@ -41,7 +49,7 @@ export default class Waiter extends Component {
                         </CardItem>
                         <CardItem bordered>
                             <Text>Avisos recibidos: 0{"\n"}
-                                  Espacios disponibles: E
+                                Espacios disponibles: E
                             </Text>
                         </CardItem>
                         <CardItem footer bordered button onPress={() => alert("Proximamente")}>
@@ -65,7 +73,7 @@ export default class Waiter extends Component {
                         </CardItem>
                     </Card>
                 </Content>
-            </Container>
+            </Container >
         );
     }
 }

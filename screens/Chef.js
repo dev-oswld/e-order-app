@@ -17,11 +17,7 @@ export default class Chef extends Component {
                     <Body style={{ flex: 1, alignItems: 'center' }}>
                         <Title>Vista Cocinero</Title>
                     </Body>
-                    <Right style={{ flex: 1 }}>
-                        <Button transparent>
-                            <Icon type="SimpleLineIcons" name='note' />
-                        </Button>
-                    </Right>
+                    <Right />
                 </Header>
                 <Content>
                     <Card /* Example */>
