@@ -58,7 +58,8 @@ buck-out/
 # CocoaPods
 /ios/Pods/
 
-# Stuffs
+# Stuffs and template (thank you tutorials!)
 android
 ios
 notes
+Example.js
