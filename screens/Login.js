@@ -1,24 +1,24 @@
+import axios from 'axios';
 import React, { Component } from 'react';
 import { StyleSheet, ToastAndroid } from 'react-native';
 import { Container, Header, Title, Body, Left, Right, Content, Thumbnail, Item, Input, Button, Icon, Text, Form, Label } from 'native-base';
-import axios from 'axios';
 
 export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
       loginProcessing: false,
-      username: 'cfuentes', //Hard coding
-      password: 'password',
+      username: '',
+      password: '',
     };
   }
 
   handleLoginRequest() {
-    const payload = { // Datos que se enviaran en peticion
+    const payload = {
       "username": this.state.username,
       "password": this.state.password
     }
-    if (payload.username == '') { // Validaciones de los datos de la peticion
+    if (payload.username == '') {
       ToastAndroid.showWithGravityAndOffset(
         'Se debe ingresar un usuario',
         ToastAndroid.LONG,
@@ -35,23 +35,16 @@ export default class Login extends Component {
         50
       );
     } else {
-      // Solicitud, solo se lelga aqui si se paso las validaciones
       this.setState({ loginProcessing: true });
       axios
         .post('/auth/login/', payload)
         .then(response => {
-          // Aqui pasan cosas si la peticion tuvo exito, ejemplo. actualizacion del state
           this.setState({
             loginProcessing: false
           });
-          // Extraccion del valor de token de la respuesta
           token = response.data.token
-          // Esto guarda el token para no tener que volver a solicitarlo (al menos hasta salirse de la app) 
           axios.defaults.headers.common.Authorization = `Token ${token}`
-
-          /* Demo, Show the token.
-          ToastAndroid.showWithGravityAndOffset( `TOKEN ${token}`, ToastAndroid.LONG, ToastAndroid.BOTTOM, 0, 50 );
-          console.log(`TOKEN ${token}`) */
+          console.log(`TOKEN ${token}`)
           this.props.navigation.navigate('Administrator')
         })
         .catch(error => {
@@ -73,7 +66,6 @@ export default class Login extends Component {
     this.setState({ password: text });
   }
 
-
   render() {
     return (
       <Container style={styles.container}>
@@ -88,8 +80,8 @@ export default class Login extends Component {
           </Body>
           <Right style={{ flex: 1 }}>
             <Button transparent onPress={() => this.props.navigation.navigate('Roles')}>
-              <Icon type="SimpleLineIcons" name='camera' />
-              <Text>QR</Text>
+              <Icon style={{ color: '#3d405b' }} type="SimpleLineIcons" name='camera' />
+              <Text style={{ color: '#3d405b' }}>QR</Text>
             </Button>
           </Right>
         </Header>
