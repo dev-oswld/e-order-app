@@ -1,6 +1,7 @@
+//import axios from 'axios';
 import React, { Component } from 'react';
-import { StyleSheet } from 'react-native';
-import { Container, Header, Title, Body, Left, Right, Content, Button, Icon, Text, Card, CardItem, Thumbnail } from 'native-base';
+import { StyleSheet, ToastAndroid } from 'react-native';
+import { Container, Header, Title, Body, Left, Right, Content, Button, Icon, Text, Thumbnail } from 'native-base';
 
 export default class Administrator extends Component {
 
@@ -19,46 +20,32 @@ export default class Administrator extends Component {
                     </Body>
                     <Right />
                 </Header>
-                <Content>
-                    <Card /* Example */>
-                        <CardItem header bordered>
-                        <Thumbnail small square source={require("../assets/images/administrador.png")} />
-                            <Text>   Sucursal ABC</Text>
-                        </CardItem>
-                        <CardItem bordered>
-                            <Body>
-                                <Text>
-                                    Platillos vendidos: A{"\n"}
-                                    Espacios disponibles: B
-                                </Text>
-                            </Body>
-                        </CardItem>
-                        <CardItem bordered>
-                            <Text>Retroalimentación recibidas: 0{"\n"}
-                                Avisos: 0
-                            </Text>
-                        </CardItem>
-                        <CardItem footer bordered button onPress={() => alert("Proximamente")}>
-                            <Text>Modificar Menú del día</Text>
-                        </CardItem>
-                    </Card>
-                    <Card>
-                        <CardItem bordered button onPress={() => alert("Más contenido pronto")}>
-                            <Body>
-                                <Text>
-                                    Configuración de la Sucursal
-                                </Text>
-                            </Body>
-                        </CardItem>
-                        <CardItem bordered>
-                            <Body>
-                                <Text>
-                                    Más contenido...{"\n"}
-                                    Más contenido...
-                                </Text>
-                            </Body>
-                        </CardItem>
-                    </Card>
+                <Content style={styles.content}>
+                    <Thumbnail style={styles.image} source={require("../assets/images/administrador.png")} />
+                    <Button
+                        block rounded large
+                        style={styles.button}
+                        onPress={() => ToastAndroid.show('CREATE', ToastAndroid.SHORT)}>
+                        <Text>Mostrar el menú</Text>
+                    </Button>
+                    <Button
+                        block rounded large
+                        style={styles.button}
+                        onPress={() => ToastAndroid.show('READ', ToastAndroid.SHORT)}>
+                        <Text>Crear nuevo elemento</Text>
+                    </Button>
+                    <Button
+                        block rounded large
+                        style={styles.button}
+                        onPress={() => ToastAndroid.show('UPDATE', ToastAndroid.SHORT)}>
+                        <Text>Actualizar el menú</Text>
+                    </Button>
+                    <Button
+                        block rounded large
+                        style={styles.button}
+                        onPress={() => ToastAndroid.show('DELETE', ToastAndroid.SHORT)}>
+                        <Text>Eliminar un elemento</Text>
+                    </Button>
                 </Content>
             </Container>
         );
@@ -70,5 +57,26 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'column',
         backgroundColor: '#f2cc8f',
+    },
+    content: {
+        flex: 2,
+        flexDirection: 'column',
+        alignSelf: 'center'
+    },
+    image: {
+        resizeMode: 'contain',
+        justifyContent: 'center',
+        tintColor: '#3d405b',
+        width: 90,
+        height: 90,
+        marginTop: 15,
+        marginLeft: 115,
+        marginRight: 115
+    },
+    button: {
+        backgroundColor: '#3d405b',
+        marginTop: 30,
+        marginLeft: 35,
+        marginRight: 35
     }
 });
