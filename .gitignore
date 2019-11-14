@@ -59,7 +59,6 @@ buck-out/
 /ios/Pods/
 
 # Stuffs and template (thank you tutorials!)
-android
 ios
 notes
 Example.js
