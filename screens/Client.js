@@ -23,7 +23,7 @@ export default class Client extends Component {
                     <Right />
                 </Header>
                 <Tabs tabContainerStyle={{ elevation: 0 }} tabBarUnderlineStyle={{ backgroundColor: '#3d405b' }}>
-                    <Tab heading="Menú del día" tabStyle={{ backgroundColor: '#f0c178' }} textStyle={{ color: 'white', fontSize: 15 }} activeTabStyle={{ backgroundColor: '#f0c178' }} activeTextStyle={{ color: '#3b3b6d', fontSize: 20 }}>
+                    <Tab heading="Menú" tabStyle={{ backgroundColor: '#f0c178' }} textStyle={{ color: 'white', fontSize: 15 }} activeTabStyle={{ backgroundColor: '#f0c178' }} activeTextStyle={{ color: '#3b3b6d', fontSize: 20 }}>
                         <TabOne />
                     </Tab>
                     <Tab heading="Seguimiento" tabStyle={{ backgroundColor: '#f0c178' }} textStyle={{ color: 'white', fontSize: 15 }} activeTabStyle={{ backgroundColor: '#f0c178' }} activeTextStyle={{ color: '#3b3b6d', fontSize: 20 }}>
