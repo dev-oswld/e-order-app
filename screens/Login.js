@@ -21,19 +21,11 @@ export default class Login extends Component {
     if (payload.username == '') {
       ToastAndroid.showWithGravityAndOffset(
         'Se debe ingresar un usuario',
-        ToastAndroid.LONG,
-        ToastAndroid.BOTTOM,
-        0,
-        50
-      );
+        ToastAndroid.SHORT, ToastAndroid.BOTTOM, 0, 50);
     } else if (payload.password == '') {
       ToastAndroid.showWithGravityAndOffset(
         'Se debe ingresar una contraseña',
-        ToastAndroid.LONG,
-        ToastAndroid.BOTTOM,
-        0,
-        50
-      );
+        ToastAndroid.SHORT, ToastAndroid.BOTTOM, 0, 50);
     } else {
       this.setState({ loginProcessing: true });
       axios
@@ -44,8 +36,9 @@ export default class Login extends Component {
           });
           token = response.data.token
           axios.defaults.headers.common.Authorization = `Token ${token}`
-          console.log(`TOKEN ${token}`)
-          this.props.navigation.navigate('Administrator')
+          // Passing value token!
+          this.props.navigation.navigate('Administrator',
+            { Token: token });
         })
         .catch(error => {
           if (error.response.data.non_field_errors != undefined) {
@@ -53,7 +46,7 @@ export default class Login extends Component {
           } else {
             error_text = "Ha ocurrido un error"
           }
-          ToastAndroid.showWithGravityAndOffset(error_text, ToastAndroid.LONG, ToastAndroid.BOTTOM, 0, 50)
+          ToastAndroid.showWithGravityAndOffset(error_text, ToastAndroid.SHORT, ToastAndroid.BOTTOM, 0, 50);
         });
     }
   }
@@ -67,6 +60,7 @@ export default class Login extends Component {
   }
 
   render() {
+    //const { navigate } = this.props.navigation; Necessary?
     return (
       <Container style={styles.container}>
         <Header style={{ backgroundColor: '#f0c178' }} androidStatusBarColor='#f0c178'>
