@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Platform, Linking, PermissionsAndroid, View } from 'react-native';
+import { StyleSheet, Platform, Linking, PermissionsAndroid, View, ToastAndroid } from 'react-native';
 import { CameraKitCameraScreen, } from 'react-native-camera-kit';
 import { Container, Content, Thumbnail, Button, Text } from 'native-base';
 
@@ -66,7 +66,7 @@ export default class Roles extends Component {
                         <Button block rounded large style={styles.button} onPress={() => this.openScanner()}>
                             <Text>Escanear QR</Text>
                         </Button>
-                        <Button block rounded large style={styles.button} onPress={() => this.props.navigation.navigate('Administrator')}>
+                        <Button block rounded large style={styles.button} onPress={() => ToastAndroid.show('Primero inicia sesión', ToastAndroid.SHORT)}>
                             <Text>Administración</Text>
                         </Button>
                         <Button block rounded large style={styles.button} onPress={() => this.props.navigation.navigate('Client')}>
