@@ -66,9 +66,6 @@ export default class Roles extends Component {
                         <Button block rounded large style={styles.button} onPress={() => this.openScanner()}>
                             <Text>Escanear QR</Text>
                         </Button>
-                        <Button block rounded large style={styles.button} onPress={() => ToastAndroid.show('Primero inicia sesión', ToastAndroid.SHORT)}>
-                            <Text>Administración</Text>
-                        </Button>
                         <Button block rounded large style={styles.button} onPress={() => this.props.navigation.navigate('Client')}>
                             <Text>Cliente</Text>
                         </Button>
@@ -92,8 +89,8 @@ export default class Roles extends Component {
                         frameColor={'white'}
                         colorForScannerFrame={'black'}
                         onReadCode={event => this.onScan(event.nativeEvent.codeStringValue)}
-                        offsetForScannerFrame = {40}   // default 30
-                        heightForScannerFrame = {300}   // default 200
+                        offsetForScannerFrame={40}   // default 30
+                        heightForScannerFrame={300}   // default 200
                     />
                 </View>
             );

@@ -5,6 +5,7 @@ import Login from './screens/Login';
 import Register from './screens/Register';
 import Roles from './screens/Roles';
 import Administrator from './screens/Administrator';
+import Positions from './screens/Positions';
 import Client from './screens/Client';
 import MenuTabOne from './tabs/MenuTabOne';
 import MenuTabTwo from './tabs/MenuTabTwo';
@@ -12,19 +13,19 @@ import MenuTabThree from './tabs/MenuTabThree';
 import Chef from './screens/Chef';
 import Waiter from './screens/Waiter';
 
-
 const AppNavigator = createStackNavigator({
     Home: { screen: Home },
     Login: { screen: Login },
     Register: { screen: Register },
     Roles: { screen: Roles },
     Administrator: { screen: Administrator },
+    Positions: { screen: Positions },
     Client: { screen: Client },
     MenuTabOne: { screen: MenuTabOne },
     MenuTabTwo: { screen: MenuTabTwo },
     MenuTabThree: { screen: MenuTabThree },
     Chef: { screen: Chef },
-    Waiter: { screen: Waiter }
+    Waiter: { screen: Waiter },
 },
     //{ initialRouteName: 'Home' },
     { headerMode: 'none' }
