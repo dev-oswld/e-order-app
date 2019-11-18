@@ -66,7 +66,7 @@ export default class Login extends Component {
         <Header style={{ backgroundColor: '#f0c178' }} androidStatusBarColor='#f0c178'>
           <Left style={{ flex: 1 }}>
             <Button transparent onPress={() => this.props.navigation.navigate('Home')}>
-              <Icon style={{ color: '#3d405b' }} type="SimpleLineIcons" name='arrow-left' />
+              <Icon type="SimpleLineIcons" name='arrow-left' />
             </Button>
           </Left>
           <Body style={{ flex: 1, alignItems: 'center' }}>
@@ -74,8 +74,8 @@ export default class Login extends Component {
           </Body>
           <Right style={{ flex: 1 }}>
             <Button transparent onPress={() => this.props.navigation.navigate('Roles')}>
-              <Icon style={{ color: '#3d405b' }} type="SimpleLineIcons" name='camera' />
-              <Text style={{ color: '#3d405b' }}>QR</Text>
+              <Icon type="SimpleLineIcons" name='camera' />
+              <Text>QR</Text>
             </Button>
           </Right>
         </Header>
