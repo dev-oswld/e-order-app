@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StatusBar, StyleSheet } from 'react-native';
-import { Container, Content, Text, List, ListItem } from 'native-base';
+import { Container, Content } from 'native-base';
 
 export default class MenuTabTwo extends Component {
     render() {
@@ -8,7 +8,6 @@ export default class MenuTabTwo extends Component {
             <Container style={styles.container}>
                 <StatusBar backgroundColor="#f2cc8f" barStyle="light-content" />
                 <Content style={styles.content}>
-
                 </Content>
             </Container>
         );
