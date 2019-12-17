@@ -7,12 +7,13 @@
   <img alt="badge" src="https://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg">
 </p>
 
-## Extra details
+## :bookmark_tabs: Extra details
 This app use Hermes to optimize for running React Native apps on Android. The benefits are a lot, see more [here](https://facebook.github.io/react-native/docs/0.60/hermes) and the configuration to use it.
 
-## ABOUT
-Subject
-> Proyecto Integrador 1
+## :busts_in_silhouette: About
+>Subject: Proyecto Integrador 1
 
-Team
-> Karla, Oscar, Oswaldo
+>Team: Karla, Oscar, Oswaldo
+
+**Note:**
+_Incomplete and demo app_ :broken_heart:.
